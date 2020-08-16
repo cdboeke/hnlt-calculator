@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honor Native Land Tax Calculator</title>
+    <link rel='stylesheet' type='text/css' href='styles.css'>
+    <script src='index.js' defer ></script>
+</head>
+<body>
+    <section>
+        <h2>Prototype 1</h2>
+        <h5>*this example calculates 2% of income</h5>
+        <form id='proto1Form'>
+            <label for='income'>Your income: </label>
+            <input type ='text' name='income' id='income' required>
+            <input type="submit" value='calculate'>
+        </form>
+        <p>Suggested Donation: <span id='proto1'>__________</span></p>
+    </section>
+    <section>
+        <h2>Prototype 2</h2>
+        <form id='proto2Form'>
+            <label for='incomeTier'>Your income bracket: </label>
+            <select name='incomeTier' id='incomeTier' required>
+                <option disabled selected value> -- select an option -- </option>
+                <option value='low'>X,XXX - XX,XXXX</option>
+                <option value='medium'>XX,XXX - XXX,XXX</option>
+                <option value='high'>XXX,XXX - X,XXX,XXX</option>
+            </select>
+            <p>Suggested Donation: <span id='proto2'>__________</span></p>
+        </form>
+    </section>
+    <section id='section3'>
+        <h2>Prototype 3</h2>
+        <form id='proto3Form'>
+            <label for='relationship'>What is your relationship with the land?</label>
+            <select name='relationship' id='relationship' required>
+                <option disabled selected value> -- select an option -- </option>
+                <option value='rent'>I rent</option>
+                <option value='own'> I own</option>
+            </select>
+            <!-- <input type="submit" value='next'> -->
+        </form>
+        <p id='p'>Suggested Donation: <span id='proto3'>__________</span></p>
+    </section>
+    <footer>Inspired by the <a href="https://sogoreate-landtrust.org/pay-the-shuumi-land-tax/" target='_blank'>Shummi Land Tax</a></footer>
+</body>
+</html>
