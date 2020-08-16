@@ -1,32 +1,24 @@
-document.querySelector('#proto1Form').addEventListener('submit', (event) => {
-    event.preventDefault();
+document.querySelector('#income').addEventListener('input', () => {
     // get the income
     const income = document.querySelector('#income').value;
-    const section = document.querySelector('#proto1');
+    const section1 = document.querySelector('#proto1');
     // make sure it's a number
     const regex = /\D+/g;
     const found = income.match(regex);
     if (found){
         console.log('oops')
-        section.innerText = 'Please enter numbers only';
-        section.style.color ='red'
+        section1.innerText = 'Please enter numbers only';
+        section1.style.color ='red'
     } else {
         // calculate suggested donation amount
         const suggestedDonation = income * 0.02;
         // Show user
-        section.innerText = `$${suggestedDonation.toFixed(2)}`;
-        section.style.color ='black'
+        section1.innerText = `$${suggestedDonation.toFixed(2)}`;
+        section1.style.color ='black'
     }
 })
 
-document.querySelector('#proto1Form').addEventListener('change', (event) => {
-    const section = document.querySelector('#proto1');
-    section.innerText = '__________';
-
-});
-
-document.querySelector('#proto2Form').addEventListener('change', (event) => {
-    event.preventDefault();
+document.querySelector('#proto2Form').addEventListener('change', () => {
     // get income tier
     const incomeTier = document.querySelector('#incomeTier').value;
     const section = document.querySelector('#proto2');
