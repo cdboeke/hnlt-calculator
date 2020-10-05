@@ -1,155 +1,49 @@
-document.querySelector('#income').addEventListener('input', () => {
-    // get the income
-    const income = document.querySelector('#income').value;
-    const section1 = document.querySelector('#proto1');
-    // make sure it's a number
-    const regex = /\D+/g;
-    const found = income.match(regex);
-    if (found){
-        console.log('oops')
-        section1.innerText = 'Please enter numbers only';
-        section1.style.color ='red'
-    } else {
-        // calculate suggested donation amount
-        const suggestedDonation = income * 0.02;
-        // Show user
-        section1.innerText = `$${suggestedDonation.toFixed(2)}`;
-        section1.style.color ='black'
-    }
-})
-
-document.querySelector('#proto2Form').addEventListener('change', () => {
-    // get income tier
-    const incomeTier = document.querySelector('#incomeTier').value;
-    const section = document.querySelector('#proto2');
-    if (incomeTier === 'low'){
-        section.innerText = 'some amount';
-    } else if (incomeTier === 'medium'){
-        section.innerText = 'some other amount';
-    } else if (incomeTier == 'high'){
-        section.innerText = 'some other other amount';
-    } else {
-        section.innerText = 'Unexpected error.';
-    } 
-})
-
-document.querySelector('#proto3Form').addEventListener('change', () => {
-    // event.preventDefault();
-    // get income tier
-    const relationship = document.querySelector('#relationship').value;
-
-    const section = document.querySelector('#proto3');
-    const form = document.querySelector('#proto3Form')
-    const p = document.querySelector('#p');
-    const section3 = document.querySelector('#section3')
-
-    section.innerText = '__________';
-
-    if (document.querySelector('#rentForm')){
-        document.querySelector('#rentForm').remove()
-    }
-    if (document.querySelector('#bedroomForm')){
-        document.querySelector('#bedroomForm').remove()
-    }
+document.querySelector('form').addEventListener('change', () => {
+    let monthSuggestion = document.querySelector('#month');
+    let yearSuggestion = document.querySelector('#year');
 
 
-    if (relationship === 'rent'){
-
-
-
-        const newForm = document.createElement('form');
-        newForm.id = 'rentForm'
-
-        const newInput = document.createElement('select');
-        newInput.id = 'monthlyRent'
-
-        const newLabel = document.createElement('label')
-        newLabel.for = 'monthlyRent';
-        newLabel.innerText = 'How much is your rent?';
-
-        const selectionOne = document.createElement('option');
-        selectionOne.innerText = ' -- select an option --';
-        selectionOne.disabled=true;
-        selectionOne.value = true;
-        selectionOne.selected = true;
-
-        const low = document.createElement('option');
-        low.innerText = 'XXX - X,XXX';
-        low.value='low';
-
-        const med = document.createElement('option');
-        med.innerText = 'X,XXX - XX,XXX';
-        med.value='med';
-
-        newInput.appendChild(selectionOne)
-        newInput.appendChild(low);
-        newInput.appendChild(med);
-        newForm.appendChild(newLabel);
-        newForm.appendChild(newInput)
-            
-        section3.insertBefore(newForm,p)
-
-        document.querySelector('#rentForm').addEventListener('change', (event) => {
-            event.preventDefault();
-            const value = document.querySelector('#monthlyRent').value;
-            if (value === 'low'){
-                section.innerText = 'rent option 1';
-            } else if (value === 'med'){
-                section.innerText = 'rent option 2';
-            }
-        })
-
+    let income = parseInt(document.querySelector('#income').value);
+    let rent = parseInt(document.querySelector('#rent').value);
+    let debt = parseInt(document.querySelector('#debt').value);
+    let wealth = parseInt(document.querySelector('#wealth').value);
+    let edu = parseInt(document.querySelector('#edu').value);
+    let kids = parseInt(document.querySelector('#kids').value);
+    let savings = parseInt(document.querySelector('#savings').value);
     
-    } else if (relationship === 'own'){
+    let choices = 0;
+    choices += income += rent += debt += wealth += edu += kids += savings;
 
-        
-        const newForm = document.createElement('form');
-        newForm.id = 'bedroomForm'
+    let level = Math.round(choices/7);
 
-
-        const newInput = document.createElement('select');
-        newInput.id = 'bedrooms'
-
-
-        const newLabel = document.createElement('label')
-        newLabel.for = 'bedrooms';
-        newLabel.innerText = 'How many bedrooms?';
-
-        const selectionOne = document.createElement('option');
-        selectionOne.innerText = ' -- select an option --';
-        selectionOne.disabled=true;
-        selectionOne.value = true;
-        selectionOne.selected = true;
-
-        const low = document.createElement('option');
-        low.innerText = 'X - X';
-        low.value='low';
-
-        const med = document.createElement('option');
-        med.innerText = 'X - XX';
-        med.value='med';
-
-        newInput.appendChild(selectionOne)
-        newInput.appendChild(low);
-        newInput.appendChild(med);
-        newForm.appendChild(newLabel);
-        newForm.appendChild(newInput)
-
-        section3.insertBefore(newForm,p)
-
-        document.querySelector('#bedroomForm').addEventListener('change', (event) => {
-            event.preventDefault();
-            const value = document.querySelector('#bedrooms').value;
-            if (value === 'low'){
-                section.innerText = 'own option 1';
-            } else if (value === 'med'){
-                section.innerText = 'own option 2';
-            }
-        })
-    } else {
-        section.innerText = 'Unexpected error.';
+    if (level !== NaN){
+        if (level === 1){
+            monthSuggestion.innerText = '$20.00'
+            yearSuggestion.innerText = '$240.00'
+        }
+        if (level === 2){
+            monthSuggestion.innerText = '$30.00'
+            yearSuggestion.innerText = '$360.00'
+        }
+        if (level === 3){
+            monthSuggestion.innerText = '$40.00'
+            yearSuggestion.innerText = '$480.00'
+        }
+        if (level === 4){
+            monthSuggestion.innerText = '$75.00'
+            yearSuggestion.innerText = '$900.00'
+        }
+        if (level === 5){
+            monthSuggestion.innerText = '$150.00'
+            yearSuggestion.innerText = '$1,800.00'
+        }
+        if (level === 6){
+            monthSuggestion.innerText = '$200.00'
+            yearSuggestion.innerText = '$2,400.00'
+        }
+        if (level === 7){
+            monthSuggestion.innerText = '$300.00'
+            yearSuggestion.innerText = '$3,600.00'
+        }
     } 
-})
-
-
-
+});
