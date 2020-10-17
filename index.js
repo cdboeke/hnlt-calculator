@@ -2,7 +2,6 @@ document.querySelector('form').addEventListener('change', () => {
     let monthSuggestion = document.querySelector('#month');
     let yearSuggestion = document.querySelector('#year');
 
-
     let income = parseInt(document.querySelector('#income').value);
     let rent = parseInt(document.querySelector('#rent').value);
     let debt = parseInt(document.querySelector('#debt').value);
@@ -15,6 +14,7 @@ document.querySelector('form').addEventListener('change', () => {
     choices += income += rent += debt += wealth += edu += kids += savings;
 
     let level = Math.round(choices/7);
+    console.log(`${choices} / 7 is ${level}`)
 
     if (level !== NaN){
         if (level === 1){

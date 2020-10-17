@@ -12,16 +12,16 @@
     <section>
         <form>
             <div>
-                <label for='income'>Household Income Level: </label>
+                <label for='income'>Income: </label>
                 <select name='income' id='income' required>
                     <option disabled selected value> -- select an option -- </option>
-                    <option value=1><$20,000</option>
+                    <option value=1>Less than $20,000</option>
                     <option value=2>$20,000 - $30,000</option>
                     <option value=3>$30,000 - $40,000</option>
                     <option value=4>$40,000 - $50,00</option>
                     <option value=5>$50,000 - $75,000</option>
                     <option value=6>$75,000 - $100,000</option>
-                    <option value=7>>$100,000</option>
+                    <option value=7>More than $100,000</option>
                 </select> 
             </div>
             <div>
@@ -32,21 +32,21 @@
                     <option value=2>Rent</option>
                     <option value=3>Own with live-in renters</option>
                     <option value=4>Free Rent</option>
-                    <option value=5>Own home</option>
-                    <option value=6>Own 2 residences</option>
-                    <option value=7>Own multiple properties, or no mortgage payment</option>
+                    <option value=5>Own home with mortgage</option>
+                    <option value=6>Own one home outright or own two residences with mortgages</option>
+                    <option value=7>Own multiple properties with mortgages</option>
                 </select>
             </div>
             <div>
                 <label for='debt'>Debt: </label>
                 <select name='debt' id='debt' required>
                     <option disabled selected value> -- select an option -- </option>
-                    <option value=1>>$300,000</option>
+                    <option value=1>More than $300,000</option>
                     <option value=2>$200,000 - $300,000</option>
                     <option value=3>$100,000 - $200,000</option>
                     <option value=4>$50,000 - $100,000</option>
                     <option value=5>$25,000 - $50,000</option>
-                    <option value=6><$25,000</option>
+                    <option value=6>Less than $25,000</option>
                     <option value=7>None</option>
                 </select>
             </div>
@@ -54,30 +54,30 @@
                 <label for='wealth'>Family Wealth: </label>
                 <select name='wealth' id='wealth' required>
                     <option disabled selected value> -- select an option -- </option>
-                    <option value=1>Death costs</option>
-                    <option value=2>0</option>
-                    <option value=3><$10,000</option>
+                    <option value=1>Negative wealth (burial costs)</option>
+                    <option value=2>None</option>
+                    <option value=3>Up to $10,000</option>
                     <option value=4>$10,000 - $50,000</option>
                     <option value=5>$50,000 - $150,000</option>
                     <option value=6>$150,000 - $500,000</option>
-                    <option value=7>$500,000</option>
+                    <option value=7>More than $500,000</option>
                 </select>
             </div>
             <div>
-                <label for='edu'>Educational Attainment: </label>
+                <label for='edu'>Level of Education: </label>
                 <select name='edu' id='edu' required>
                     <option disabled selected value> -- select an option -- </option>
-                    <option value=1>Might not have high school diploma or GED</option>
+                    <option value=1>No high school diploma or GED</option>
                     <option value=2>High school diploma or GED</option>
-                    <option value=3>High school diploma, or Associates Degree</option>
+                    <option value=3>Associates Degree or some college</option>
                     <option value=4>College degree (BA, BS, RN)</option>
-                    <option value=5>1 advanced degree (MS, MA, MSW, NP)</option>
-                    <option value=6>1 or more advanced degrees (Phd, PA, CPA)</option>
-                    <option value=7>1 or more advanced degrees (MD, JD, MBA)</option>
+                    <option value=5>One advanced degree (that does not significantly impact earning potential)</option>
+                    <option value=6>One or more advanced degrees (that does significantly impact earning potential)</option>
+                    <option value=7>Two or more advanced degrees</option>
                 </select>
             </div>
             <div>
-                <label for='kids'>Children Support: </label>
+                <label for='kids'>Number of Dependents: </label>
                 <select name='kids' id='kids' required>
                     <option disabled selected value> -- select an option -- </option>
                     <option value=1>5+</option>
@@ -90,16 +90,16 @@
                 </select>
             </div>
             <div>
-                <label for='savings'>Savings:</label>
+                <label for='savings'>Savings and Investments:</label>
                 <select name='savings' id='savings' required>
                     <option disabled selected value> -- select an option -- </option>
-                    <option value=1>0</option>
-                    <option value=2>$1,000 - $5,000</option>
-                    <option value=3>$5,000 - $20,000</option>
-                    <option value=4>$20,000 - $50,000</option>
-                    <option value=5>$50,000 - $100,000</option>
-                    <option value=6>$100,000 - $200,000</option>
-                    <option value=7>$200,000+</option>
+                    <option value=1>Less than $500</option>
+                    <option value=2>$500 - $3,000</option>
+                    <option value=3>$3,000 - $10,000</option>
+                    <option value=4>$10,000 - $25,000</option>
+                    <option value=5>$25,000 - $50,000</option>
+                    <option value=6>$50,000 - $100,000</option>
+                    <option value=7>More than $100,000+</option>
                 </select>
             </div>
         </form>
