@@ -3,6 +3,9 @@ body {
 }
 div {
     margin: .5em 0;
+    /* display:flex;
+    flex-wrap: wrap; */
+    /* width:100%; */
 }
 footer {
     position:absolute;
@@ -15,9 +18,8 @@ section {
 .tooltip {
     position: relative;
 }
-.tooltip .tooltiptext {
-    visibility: hidden;
-    max-width: 80%;
+.tooltip .tooltipText {
+    visibility:hidden;
     background-color: #555;
     color: #fff;
     text-align: center;
@@ -25,23 +27,11 @@ section {
     padding: 5px;
     position: absolute;
     z-index: 1;
-    bottom: 125%;
-    /* left: 25%; */
-    /* margin-left: -60px; */
+    margin-left:2em;
+    top:-50%;
     opacity: 0;
     transition: opacity 0.3s;
 }
-/* .tooltip .tooltiptext::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #555 transparent transparent transparent;
-} */
-.tooltip:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
-}
+
+
+

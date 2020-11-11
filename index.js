@@ -7,14 +7,14 @@ document.querySelector('form').addEventListener('change', () => {
     let debt = parseInt(document.querySelector('#debt').value);
     let wealth = parseInt(document.querySelector('#wealth').value);
     let edu = parseInt(document.querySelector('#edu').value);
-    let kids = parseInt(document.querySelector('#kids').value);
+    let dependents = parseInt(document.querySelector('#dependents').value);
     let savings = parseInt(document.querySelector('#savings').value);
     
     let choices = 0;
-    choices += income += rent += debt += wealth += edu += kids += savings;
+    choices += income += rent += debt += wealth += edu += dependents += savings;
 
     let level = Math.round(choices/7);
-    console.log(`${choices} / 7 is ${level}`)
+    //console.log(`${choices} / 7 is ${level}`)
 
     if (level !== NaN){
         if (level === 1){
@@ -47,3 +47,24 @@ document.querySelector('form').addEventListener('change', () => {
         }
     } 
 });
+
+const addInfoEffect = (idName, className) => {
+    document.querySelector(`#${idName}`).addEventListener('focus', () =>{
+        document.querySelector(`.${className}`).style.visibility = 'visible';
+        document.querySelector(`.${className}`).style.opacity = 1;
+    });
+
+    document.querySelector(`#${idName}`).addEventListener('blur', () =>{
+        document.querySelector(`.${className}`).style.visibility = 'hidden';
+        document.querySelector(`.${className}`).style.opacity = 0;
+    })
+}
+
+addInfoEffect('income', 'incomeInfo');
+addInfoEffect('rent', 'rentInfo');
+addInfoEffect('debt', 'debtInfo');
+addInfoEffect('wealth', 'wealthInfo');
+addInfoEffect('edu', 'eduInfo');
+addInfoEffect('dependents', 'dependentsInfo');
+addInfoEffect('savings', 'savingsInfo');
+
