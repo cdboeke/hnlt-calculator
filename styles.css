@@ -3,34 +3,45 @@ body {
 }
 div {
     margin: .5em 0;
-    /* display:flex;
-    flex-wrap: wrap; */
+    display:flex;
+    /* justify-content:space-between; */
+    flex-wrap: wrap;
     /* width:100%; */
 }
-footer {
-    position:absolute;
-    bottom:.5em;
+form {
+    margin-bottom:4em;
 }
-section {
-    margin:2em 0;
+select {
+    margin-left:1em;
+}
+h3{
+    margin-top:0;
+    margin-bottom:0;
+}
+.calculator {
+    border:2px solid black;
+    padding:1em;
+    display:inline-block;
 }
 /* tooltip code from https://www.w3schools.com/howto/howto_css_tooltip.asp */
 .tooltip {
-    position: relative;
+    /* position: relative; */
+    /* display:flex; */
+    display: none;
+    max-width:700px;
 }
 .tooltip .tooltipText {
-    visibility:hidden;
+    visibility:collapse;
     background-color: #555;
     color: #fff;
     text-align: center;
     border-radius: 6px;
     padding: 5px;
-    position: absolute;
+    display:inline-block;
+    width:100%;
     z-index: 1;
-    margin-left:2em;
-    top:-50%;
     opacity: 0;
-    transition: opacity 0.3s;
+    transition: opacity .8s;
 }
 
 
