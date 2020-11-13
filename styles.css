@@ -1,5 +1,8 @@
 body {
     font-family:Arial, Helvetica, sans-serif;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
 }
 div {
     margin: .33em 0;
@@ -7,45 +10,23 @@ div {
 form {
     margin-bottom:4em;
 }
-select {
-    margin-left:1em;
+h2{
+    margin-bottom:.75em;
 }
-h3{
+h5{
     margin-top:0;
     margin-bottom:1em;
+}
+section {
+    display:inline-block;
+    margin:1em;
+    max-width:90%;
 }
 .calculator {
     border:2px solid black;
     padding:1em;
-    display:inline-block;
-    width:650px;
 }
-/* tooltip code from https://www.w3schools.com/howto/howto_css_tooltip.asp */
-.tooltip {
-    /* position: relative; */
-    /* display:flex; */
-    display: none;
-    /* margin:1em; */
-    /* max-width:700px; */
+.info {
+    display:none;
+    max-width:650px;
 }
-.tooltip .tooltipText {
-    visibility:collapse;
-    background-color: #555;
-    color: #fff;
-    text-align: left;
-    border-radius: 6px;
-    padding: 5px;
-    display:inline-block;
-    margin-bottom: 1em;
-    /* width:100%; */
-    z-index: 1;
-    opacity: 0;
-    transition: opacity .8s;
-}
-
-@media only screen and (max-width: 649px) {
-    .calculator {
-        width:90%;
-    }
-}
-

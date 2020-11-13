@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Honor Native Land Tax Calculator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel='stylesheet' type='text/css' href='styles.css'>
     <script src='index.js' defer ></script>
 </head>
 <body>
-    <h2>Honor Native Land Tax Calculator</h2>
     <section>
+        <h2>Honor Native Land Tax Calculator</h2>
         <p>Welcome to the Honor Native Land Tax calculator! 
         We created this calculator to help you think about your 
         relationship to money and the land you’re on, because we 
@@ -30,16 +31,16 @@
         amount as needed.</p>
     </section>
     <section class = 'calculator'>
-        <h3>Categories</h3>
-        <div class="tooltip">
+        <!-- <div class="tooltip">
             <span class="tooltipText">
             </span>
-        </div>
+        </div> -->
         <form>
             <div>
                 <label for='income'>Individual Income: </label>
-                <select name='income' id='income' required>
-                    <option disabled selected value> -- select an option -- </option>
+                <p class='info incomeInfo'><b>Consider all sources of income including, but not limited to: jobs, gigs, rental income, dividends, commissions, money you currently get from family members etc.</b></p>
+                <select name='income' id='income' class="custom-select custom-select-sm" required>
+                    <option disabled selected value> Choose your option </option>
                     <option value=1>Less than $20,000</option>
                     <option value=2>$20,000 - $30,000</option>
                     <option value=3>$30,000 - $40,000</option>
@@ -51,8 +52,9 @@
             </div>
             <div>
                 <label for='rent'>Housing: </label>
-                <select name='rent' id='rent' required>
-                    <option disabled selected value> -- select an option -- </option>
+                <p class='info rentInfo'><b>Consider your current living situation, including whether you rent or own</b></p>
+                <select name='rent' id='rent' class="custom-select custom-select-sm" required>
+                    <option disabled selected value> Choose your option </option>
                     <option value=1>Housing insecure</option>
                     <option value=2>Rent</option>
                     <option value=3>Own with live-in renters</option>
@@ -64,8 +66,9 @@
             </div>
             <div>
                 <label for='debt'>Debt: </label>
-                <select name='debt' id='debt' required>
-                    <option disabled selected value> -- select an option -- </option>
+                <p class='info debtInfo'><b>Consider all student, medical, and consumer debt that you currently have. Do not include mortgage debt, this is accounted for in the housing category.</b></p>
+                <select name='debt' id='debt' class="custom-select custom-select-sm" required>
+                    <option disabled selected value> Choose your option </option>
                     <option value=1>More than $300,000</option>
                     <option value=2>$200,000 - $300,000</option>
                     <option value=3>$100,000 - $200,000</option>
@@ -77,8 +80,9 @@
             </div>
             <div>
                 <label for='wealth'>Family Wealth: </label>
-                <select name='wealth' id='wealth' required>
-                    <option disabled selected value> -- select an option -- </option>
+                <p class='info wealthInfo'><b>Consider wealth that you currently have access to because of family or other relationships, as well as what you might inherit or owe when family members pass away. Wealth you have access to or may inherit includes: money, gifts, stocks, land and property, trusts, cars, etc. Negative family wealth means you don’t inherit anything of value and have responsibility to pay expenses that come up when a family member dies, like funeral, casket, legal fees, clergy, etc.</b></p>
+                <select name='wealth' id='wealth' class="custom-select custom-select-sm" required>
+                    <option disabled selected value> Choose your option </option>
                     <option value=1>Negative wealth (burial costs)</option>
                     <option value=2>None</option>
                     <option value=3>Up to $10,000</option>
@@ -90,8 +94,9 @@
             </div>
             <div>
                 <label for='edu'>Level of Education: </label>
-                <select name='edu' id='edu' required>
-                    <option disabled selected value> -- select an option -- </option>
+                <p class='info eduInfo'><b>Consider your current status. We acknowledge that not all advanced degrees are created equally—some have higher earning potential and social capital than others. We’ve tried to account for this and we also encourage you to think about your degree(s) in terms of social hierarchy (e.g. MDs and JDs often have higher earning potential than MFAs).</b></p>
+                <select name='edu' id='edu' class="custom-select custom-select-sm" required>
+                    <option disabled selected value> Choose your option </option>
                     <option value=1>No high school diploma or GED</option>
                     <option value=2>High school diploma or GED</option>
                     <option value=3>Associates Degree or some college</option>
@@ -103,8 +108,9 @@
             </div>
             <div>
                 <label for='dependents'>Number of Dependents: </label>
-                <select name='dependents' id='dependents' required>
-                    <option disabled selected value> -- select an option -- </option>
+                <p class='info dependentsInfo'><b>Consider the people who rely on you for financial support, including children, elders, or others.</b></p>
+                <select name='dependents' id='dependents' class="custom-select custom-select-sm" required>
+                    <option disabled selected value> Choose your option </option>
                     <option value=1>6+</option>
                     <option value=2>5</option>
                     <option value=3>4</option>
@@ -116,8 +122,9 @@
             </div>
             <div>
                 <label for='savings'>Savings:</label>
-                <select name='savings' id='savings' required>
-                    <option disabled selected value> -- select an option -- </option>
+                <p class='info savingsInfo'><b>Consider the money that is in your savings account, retirement funds (401k, IRA, SEP, etc), investments in stocks, bonds, and mutual funds.</b></p>
+                <select name='savings' id='savings' class="custom-select custom-select-sm" required>
+                    <option disabled selected value> Choose your option </option>
                     <option value=1>Less than $500</option>
                     <option value=2>$500 - $3,000</option>
                     <option value=3>$3,000 - $10,000</option>
@@ -128,11 +135,11 @@
                 </select>
             </div>
         </form>
-        <section>
-            <h3>Suggested Donation</h3>
+        <div>
+            <h5>Suggested Donation</h5>
             <p>Monthly: <span id='month'>__________</span></p>
             <p>Yearly: <span id='year'>__________</span></p>
-        </section>
+        </div>
     </section>
         <!-- <section>
         <h3>About the Categories:</h3>
