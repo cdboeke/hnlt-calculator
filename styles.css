@@ -25,11 +25,14 @@ section {
 .calculator {
     border:2px solid black;
     padding:1em;
+    margin-bottom:4em;
 }
 .info {
     display:none;
     max-width:650px;
 }
-.output {
+#output {
     margin-top:2em;
 }
+
+

@@ -1,4 +1,7 @@
+const output = document.querySelector('#output');
+
 document.querySelector('form').addEventListener('change', () => {
+
     let income = parseInt(document.querySelector('#income').value);
     let rent = parseInt(document.querySelector('#rent').value);
     let debt = parseInt(document.querySelector('#debt').value);
@@ -43,7 +46,7 @@ document.querySelector('form').addEventListener('change', () => {
 });
 
 const showSuggestion = (annual) => {
-    document.querySelector('.output').innerHTML = `<p><b>Suggested Donation:</b> $${annual}.00 a year, or $${annual/12}.00 a month.</p>`;
+    output.innerHTML = `<p><b>Suggested Donation:</b> $${annual}.00 a year, or $${annual/12}.00 a month.</p>`;
 };
 
 const showInfo = category => {
