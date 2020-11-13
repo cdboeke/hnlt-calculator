@@ -1,7 +1,4 @@
 document.querySelector('form').addEventListener('change', () => {
-    let monthSuggestion = document.querySelector('#month');
-    let yearSuggestion = document.querySelector('#year');
-
     let income = parseInt(document.querySelector('#income').value);
     let rent = parseInt(document.querySelector('#rent').value);
     let debt = parseInt(document.querySelector('#debt').value);
@@ -17,36 +14,37 @@ document.querySelector('form').addEventListener('change', () => {
     //console.log(`${choices} / 7 is ${level}`)
 
     if (level !== NaN){
-        if (level === 1){
-            monthSuggestion.innerText = '$20.00'
-            yearSuggestion.innerText = '$240.00'
-        }
-        if (level === 2){
-            monthSuggestion.innerText = '$30.00'
-            yearSuggestion.innerText = '$360.00'
-        }
-        if (level === 3){
-            monthSuggestion.innerText = '$40.00'
-            yearSuggestion.innerText = '$480.00'
-        }
-        if (level === 4){
-            monthSuggestion.innerText = '$75.00'
-            yearSuggestion.innerText = '$900.00'
-        }
-        if (level === 5){
-            monthSuggestion.innerText = '$150.00'
-            yearSuggestion.innerText = '$1,800.00'
-        }
-        if (level === 6){
-            monthSuggestion.innerText = '$200.00'
-            yearSuggestion.innerText = '$2,400.00'
-        }
-        if (level === 7){
-            monthSuggestion.innerText = '$300.00'
-            yearSuggestion.innerText = '$3,600.00'
+        switch (level) {
+            case 1:
+                showSuggestion(240);
+                break;
+            case 2:
+                showSuggestion(360);
+                break;
+            case 3:
+                showSuggestion(480);
+                break;
+            case 4:
+                showSuggestion(900);
+                break;
+            case 5: 
+                showSuggestion(1800);
+                break;
+            case 6:
+                showSuggestion(2400);
+                break;
+            case 7:
+                showSuggestion(3600);
+                break;
+            deafult:
+                console.log('Error.')
         }
     } 
 });
+
+const showSuggestion = (annual) => {
+    document.querySelector('.output').innerHTML = `<p><b>Suggested Donation:</b> $${annual}.00 a year, or $${annual/12}.00 a month.</p>`;
+};
 
 const showInfo = category => {
     document.querySelector(`#${category}`).addEventListener('focus', () =>{

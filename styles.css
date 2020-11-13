@@ -8,7 +8,7 @@ div {
     margin: .33em 0;
 }
 form {
-    margin-bottom:4em;
+    margin-bottom:2em;
 }
 h2{
     margin-bottom:.75em;
@@ -29,4 +29,7 @@ section {
 .info {
     display:none;
     max-width:650px;
+}
+.output {
+    margin-top:2em;
 }
