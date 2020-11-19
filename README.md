@@ -1,5 +1,6 @@
 # Honor Native Land Tax Calculator
 <img src="./screenshots/1.png" alt="screenshot of tool, full screen">
+
 This project is a collaboration with [Albuquerque's Showing Up for Racial Justice (SURJ)](https://www.honornativelandtax.org/) group. 
 
 
